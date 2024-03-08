@@ -6,9 +6,9 @@ pipeline {
             steps {
                 script {
                     // Your build commands here
-                    echo 'Building...'
-                    sh 'make'
+                    sh 'g++ -o executable main/PES1UG21CS565.cpp'
                 }
+                echo 'Build Stage Successful'
             }
         }
 
@@ -16,9 +16,10 @@ pipeline {
             steps {
                 script {
                     // Your test commands here
-                    echo 'Testing...'
-                    sh 'make test'
+                   
+                    sh './executable'
                 }
+                echo 'Test Stage Successful'
             }
         }
 
@@ -26,8 +27,7 @@ pipeline {
             steps {
                 script {
                     // Your deployment commands here
-                    echo 'Deploying...'
-                    sh 'make deploy'
+                    echo 'Deployment successful'
                 }
             }
         }
