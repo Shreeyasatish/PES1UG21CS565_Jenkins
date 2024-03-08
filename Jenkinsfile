@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     // Your build commands here
-                    sh 'g++ -o main/executable main/hello.cpp'
+                    sh 'g++ -o executable main/hello.cpp'
 
                 }
                 echo 'Build Stage Successful'
@@ -18,7 +18,7 @@ pipeline {
                 script {
                     // Your test commands here
                    
-                    sh 'main/executable'
+                    sh './executable'
 
                 }
                 echo 'Test Stage Successful'
